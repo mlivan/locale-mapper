@@ -16,9 +16,9 @@ class Country implements CountryInterface
     private $countryCode;
 
     /**
-     * @var string $langCode
+     * @var string $locale
      */
-    private $langCode;
+    private $locale;
 
     /**
      * @var string $currency
@@ -36,9 +36,9 @@ class Country implements CountryInterface
     /**
      * {@inheritdoc}
      */
-    public function getLangCode(): string
+    public function getLocale(): string
     {
-        return $this->langCode;
+        return $this->locale;
     }
 
     /**
@@ -62,9 +62,9 @@ class Country implements CountryInterface
     /**
      * {@inheritdoc}
      */
-    public function setLangCode(string $langCode): CountryInterface
+    public function setLocale(string $locale): CountryInterface
     {
-        $this->langCode = $langCode;
+        $this->locale = $locale;
 
         return $this;
     }

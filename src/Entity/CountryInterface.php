@@ -3,7 +3,7 @@
 namespace Emakina\LocaleMapper\Entity;
 
 /**
- * Interface CountyInterface
+ * Interface CountryInterface
  *
  * @package Emakina\LocaleMapper\Entity
  */
@@ -22,7 +22,7 @@ interface CountryInterface
      *
      * @return string
      */
-    public function getLangCode(): string;
+    public function getLocale(): string;
 
     /**
      * Return the currency
@@ -39,11 +39,11 @@ interface CountryInterface
     public function setCountryCode(string $name): self;
 
     /**
-     * @param string $langCode
+     * @param string $locale
      *
      * @return self
      */
-    public function setLangCode(string $langCode): self;
+    public function setLocale(string $locale): self;
 
     /**
      * @param string $currency
