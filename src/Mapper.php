@@ -16,7 +16,7 @@ class Mapper
     /**
      * Maps the given locale to the matching lang code - country - currency combination
      *
-     * @param $locale
+     * @param string $locale
      *
      * @return \Emakina\LocaleMapper\Entity\CountryInterface
      * @throws InvalidLanguageException
@@ -25,8 +25,8 @@ class Mapper
     {
         $result = null;
         foreach (Countries::MAPPING as $values) {
-            // We have two possibilities: we only got a country, so we return the first matching occurrence
-            // or we have both country and language, we return the fully matching occurrence
+            // We have two possibilities: the given local is the country, so we return the first matching (default) occurrence
+            // or it's the locale, in this case we try to find a country with a matching locale.
             if ($values['locale'] === $locale || $values['country'] === $locale) {
                 $result = $values;
                 break;
