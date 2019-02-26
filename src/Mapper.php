@@ -14,7 +14,7 @@ class Mapper
 {
 
     /**
-     * Maps the given locale to a country-currency combination
+     * Maps the given locale to the matching lang code - country - currency combination
      *
      * @param $locale
      *
@@ -25,7 +25,7 @@ class Mapper
     {
         $langcode = null;
         $country  = $locale;
-        // In case we get a locale containing the langcode and the country, we split it.
+        // In case we get a locale containing the lang code and the country, we split it.
         if (preg_match('/^([a-z]{2})-([a-z]{2})/', $locale)) {
             list($langcode, $country) = explode('-', $locale);
         }
@@ -41,13 +41,14 @@ class Mapper
         }
 
         if (!$result) {
-            throw new InvalidLanguageException('Not supported locale');
+            throw new InvalidLanguageException('Unsupported locale');
         }
-
+        
+        // Instantiate the country
         $country = new Country();
-        $country->setName($result['country']);
+        $country->setCountryCode($result['country']);
         $country->setCurrency($result['currency']);
-        $country->setLangcode($result['langcode']);
+        $country->setLangCode($result['langcode']);
 
         return $country;
     }

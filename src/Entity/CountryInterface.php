@@ -11,18 +11,18 @@ interface CountryInterface
 {
 
     /**
-     * Return the name
+     * Return the country code
      *
      * @return string
      */
-    public function getName(): string;
+    public function getCountryCode(): string;
 
     /**
-     * Return the langcode
+     * Return the lang code
      *
      * @return string
      */
-    public function getLangcode(): string;
+    public function getLangCode(): string;
 
     /**
      * Return the currency
@@ -36,14 +36,14 @@ interface CountryInterface
      *
      * @return self
      */
-    public function setName(string $name): self;
+    public function setCountryCode(string $name): self;
 
     /**
-     * @param string $langcode
+     * @param string $langCode
      *
      * @return self
      */
-    public function setLangcode(string $langcode): self;
+    public function setLangCode(string $langCode): self;
 
     /**
      * @param string $currency

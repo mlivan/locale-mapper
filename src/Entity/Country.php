@@ -3,7 +3,7 @@
 namespace Emakina\LocaleMapper\Entity;
 
 /**
- * Class LocaleMapping
+ * Class Country
  *
  * @package Emakina\LocaleMapper\Entity
  */
@@ -11,14 +11,14 @@ class Country implements CountryInterface
 {
 
     /**
-     * @var string $name
+     * @var string $countryCode
      */
-    private $name;
+    private $countryCode;
 
     /**
-     * @var string $langcode
+     * @var string $langCode
      */
-    private $langcode;
+    private $langCode;
 
     /**
      * @var string $currency
@@ -28,17 +28,17 @@ class Country implements CountryInterface
     /**
      * {@inheritdoc}
      */
-    public function getName(): string
+    public function getCountryCode(): string
     {
-        return $this->name;
+        return $this->countryCode;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getLangcode(): string
+    public function getLangCode(): string
     {
-        return $this->langcode;
+        return $this->langCode;
     }
 
     /**
@@ -52,9 +52,9 @@ class Country implements CountryInterface
     /**
      * {@inheritdoc}
      */
-    public function setName(string $name): CountryInterface
+    public function setCountryCode(string $countryCode): CountryInterface
     {
-        $this->name = $name;
+        $this->countryCode   = $countryCode;
 
         return $this;
     }
@@ -62,9 +62,9 @@ class Country implements CountryInterface
     /**
      * {@inheritdoc}
      */
-    public function setLangcode(string $langcode): CountryInterface
+    public function setLangCode(string $langCode): CountryInterface
     {
-        $this->langcode = $langcode;
+        $this->langCode = $langCode;
 
         return $this;
     }
