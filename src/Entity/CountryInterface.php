@@ -3,19 +3,19 @@
 namespace Emakina\LocaleMapper\Entity;
 
 /**
- * Interface LocaleMappingInterface
+ * Interface CountyInterface
  *
  * @package Emakina\LocaleMapper\Entity
  */
-interface LocaleMappingInterface
+interface CountryInterface
 {
 
     /**
-     * Return the country
+     * Return the name
      *
      * @return string
      */
-    public function getCountry(): string;
+    public function getName(): string;
 
     /**
      * Return the langcode
@@ -32,23 +32,23 @@ interface LocaleMappingInterface
     public function getCurrency(): string;
 
     /**
-     * @param string $country
+     * @param string $name
      *
-     * @return \Emakina\LocaleMapper\Entity\LocaleMappingInterface
+     * @return self
      */
-    public function setCountry(string $country): self;
+    public function setName(string $name): self;
 
     /**
      * @param string $langcode
      *
-     * @return \Emakina\LocaleMapper\Entity\LocaleMappingInterface
+     * @return self
      */
     public function setLangcode(string $langcode): self;
 
     /**
      * @param string $currency
      *
-     * @return \Emakina\LocaleMapper\Entity\LocaleMappingInterface
+     * @return self
      */
     public function setCurrency(string $currency): self;
 }

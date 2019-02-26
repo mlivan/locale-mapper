@@ -7,13 +7,13 @@ namespace Emakina\LocaleMapper\Entity;
  *
  * @package Emakina\LocaleMapper\Entity
  */
-class LocaleMapping implements LocaleMappingInterface
+class Country implements CountryInterface
 {
 
     /**
-     * @var string $country
+     * @var string $name
      */
-    private $country;
+    private $name;
 
     /**
      * @var string $langcode
@@ -28,9 +28,9 @@ class LocaleMapping implements LocaleMappingInterface
     /**
      * {@inheritdoc}
      */
-    public function getCountry(): string
+    public function getName(): string
     {
-        return $this->country;
+        return $this->name;
     }
 
     /**
@@ -52,9 +52,9 @@ class LocaleMapping implements LocaleMappingInterface
     /**
      * {@inheritdoc}
      */
-    public function setCountry(string $country): LocaleMappingInterface
+    public function setName(string $name): CountryInterface
     {
-        $this->country = $country;
+        $this->name = $name;
 
         return $this;
     }
@@ -62,7 +62,7 @@ class LocaleMapping implements LocaleMappingInterface
     /**
      * {@inheritdoc}
      */
-    public function setLangcode(string $langcode): LocaleMappingInterface
+    public function setLangcode(string $langcode): CountryInterface
     {
         $this->langcode = $langcode;
 
@@ -72,7 +72,7 @@ class LocaleMapping implements LocaleMappingInterface
     /**
      * {@inheritdoc}
      */
-    public function setCurrency(string $currency): LocaleMappingInterface
+    public function setCurrency(string $currency): CountryInterface
     {
         $this->currency = $currency;
 
