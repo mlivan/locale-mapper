@@ -38,11 +38,7 @@ class Mapper
         }
         
         // Instantiate the country
-        $country = new Country();
-        $country->setCountryCode($result['country']);
-        $country->setCurrency($result['currency']);
-        $country->setLocale($result['locale']);
-
+        $country = new Country($result['country'],$result['currency'],$result['locale']);
         return $country;
     }
 }
