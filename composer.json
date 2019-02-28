@@ -1,0 +1,19 @@
+{
+    "name": "emakina/locale-mapper",
+    "description": "A library to map given supported locales to a combination of country - currency - langcode.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emakina",
+            "email": "php.tribe@emakina.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Emakina\\LocaleMapper\\": "src/"
+        }
+    }
+}
