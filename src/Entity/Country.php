@@ -28,7 +28,6 @@ class Country implements CountryInterface
     /**
      * {@inheritdoc}
      */
-
     public function __construct(string $country,string $currency,string $locale)
     {
         $this->setCountryCode($country);
@@ -36,6 +35,9 @@ class Country implements CountryInterface
         $this->setLocale($locale);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getCountryCode(): string
     {
         return $this->countryCode;

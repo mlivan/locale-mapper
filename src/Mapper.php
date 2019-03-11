@@ -39,6 +39,7 @@ class Mapper
         
         // Instantiate the country
         $country = new Country($result['country'], $result['currency'], $result['locale']);
+
         return $country;
     }
 }
