@@ -22,7 +22,7 @@ final class Countries
             'currency' => 'GBP',
         ],
         [
-            'country'  => 'en',
+            'country'  => 'gb',
             'locale' => 'en-GB',
             'currency' => 'GBP',
         ],
@@ -62,7 +62,7 @@ final class Countries
             'currency' => 'EUR',
         ],
         [
-            'country'  => 'sv',
+            'country'  => 'se',
             'locale' => 'sv',
             'currency' => 'EUR',
         ],
@@ -72,7 +72,7 @@ final class Countries
             'currency' => 'EUR',
         ],
         [
-            'country'  => 'da',
+            'country'  => 'dk',
             'locale' => 'da',
             'currency' => 'EUR',
         ],

@@ -1,5 +1,5 @@
 {
-    "name": "emakina/locale-mapper",
+    "name": "mlivan/locale-mapper",
     "description": "A library to map given supported locales to a combination of country - currency - langcode.",
     "license": "MIT",
     "authors": [
