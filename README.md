@@ -6,7 +6,7 @@ The recommended way to install Locale Mapper is through
 [Composer](http://getcomposer.org).
 
  ```bash
-composer require emakina/locale-mapper
+composer require mlivan/locale-mapper
  ```
  
 ### License
