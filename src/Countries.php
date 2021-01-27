@@ -121,5 +121,10 @@ final class Countries
             'locale' => 'de-AT',
             'currency' => 'EUR',
         ],
+        [
+            'country'  => 'de',
+            'locale' => 'de',
+            'currency' => 'EUR',
+        ],
     ];
 }
