@@ -28,7 +28,7 @@ class Mapper
         foreach (Countries::MAPPING as $values) {
             // We have two possibilities: the given local is the country, so we return the first matching (default) occurrence
             // or it's the locale, in this case we try to find a country with a matching locale.
-            if ($values['locale'] === $locale || $values['country'] === $locale) {
+            if ($values['locale'] === $locale || strtolower($values['country']) === $locale) {
                 $result = $values;
                 break;
             }
@@ -54,7 +54,7 @@ class Mapper
     {
         $result = [];
         foreach (Countries::MAPPING as $values) {
-            if ($values['country'] === $country) {
+            if ($values['country'] === strtolower($country)) {
                 $result[] = new Country($values['country'], $values['currency'], $values['locale']);
             }
         }
