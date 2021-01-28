@@ -3,6 +3,7 @@
 namespace Emakina\LocaleMapper;
 
 use Emakina\LocaleMapper\Entity\Country;
+use Emakina\LocaleMapper\Entity\CountryInterface;
 use Emakina\LocaleMapper\Exception\InvalidLanguageException;
 
 /**
@@ -18,7 +19,7 @@ class Mapper
      *
      * @param string $locale
      *
-     * @return \Emakina\LocaleMapper\Entity\CountryInterface
+     * @return CountryInterface
      * @throws InvalidLanguageException
      */
     public function map(string $locale)
@@ -38,8 +39,30 @@ class Mapper
         }
         
         // Instantiate the country
-        $country = new Country($result['country'], $result['currency'], $result['locale']);
+        return new Country($result['country'], $result['currency'], $result['locale']);
+    }
 
-        return $country;
+    /**
+     * Return all locals (country code - country - currency) base on country code
+     *
+     * @param string $country
+     *
+     * @return CountryInterface[]
+     * @throws InvalidLanguageException
+     */
+    public function mapCountryLocals(string $country)
+    {
+        $result = [];
+        foreach (Countries::MAPPING as $values) {
+            if ($values['country'] === $country) {
+                $result[] = new Country($values['country'], $values['currency'], $values['locale']);
+            }
+        }
+
+        if (!$result) {
+            throw new InvalidLanguageException('Unsupported country code');
+        }
+
+        return $result;
     }
 }
