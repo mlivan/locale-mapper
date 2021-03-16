@@ -27,7 +27,6 @@ final class Countries
             'locale' => 'en-GB',
             'currency' => 'GBP',
             'googleMapLang' => 'en-GB',
-
         ],
         [
             'country'  => 'fr',
