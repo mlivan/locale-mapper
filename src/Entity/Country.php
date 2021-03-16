@@ -26,13 +26,19 @@ class Country implements CountryInterface
     private $currency;
 
     /**
+     * @var string $googleMapLanguage
+     */
+    private $googleMapLanguage;
+
+    /**
      * {@inheritdoc}
      */
-    public function __construct(string $country,string $currency,string $locale)
+    public function __construct(string $countryCode, string $currency, string $locale, string $googleMapLanguage)
     {
-        $this->setCountryCode($country);
+        $this->setCountryCode($countryCode);
         $this->setCurrency($currency);
         $this->setLocale($locale);
+        $this->setGoogleMapLanguage($googleMapLanguage);
     }
 
     /**
@@ -62,9 +68,17 @@ class Country implements CountryInterface
     /**
      * {@inheritdoc}
      */
+    public function getGoogleMapLanguage(): string
+    {
+        return $this->googleMapLanguage;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function setCountryCode(string $countryCode): CountryInterface
     {
-        $this->countryCode   = $countryCode;
+        $this->countryCode = $countryCode;
 
         return $this;
     }
@@ -85,6 +99,16 @@ class Country implements CountryInterface
     public function setCurrency(string $currency): CountryInterface
     {
         $this->currency = $currency;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setGoogleMapLanguage(string $googleMapLanguage): CountryInterface
+    {
+        $this->googleMapLanguage = $googleMapLanguage;
 
         return $this;
     }

@@ -13,9 +13,8 @@ use Emakina\LocaleMapper\Exception\InvalidLanguageException;
  */
 class Mapper
 {
-
     /**
-     * Maps the given locale to the matching lang code - country - currency combination
+     * Maps the given locale to the matching lang code - country - currency - googleMapLanguage combination
      *
      * @param string $locale
      *
@@ -39,11 +38,11 @@ class Mapper
         }
         
         // Instantiate the country
-        return new Country($result['country'], $result['currency'], $result['locale']);
+        return new Country($result['country'], $result['currency'], $result['locale'], $result['googleMapLanguage']);
     }
 
     /**
-     * Return all locals (country code - country - currency) base on country code
+     * Return all locals (country code - country - currency - googleMapLanguage) base on country code
      *
      * @param string $country
      *
@@ -55,7 +54,7 @@ class Mapper
         $result = [];
         foreach (Countries::MAPPING as $values) {
             if ($values['country'] === strtolower($country)) {
-                $result[] = new Country($values['country'], $values['currency'], $values['locale']);
+                $result[] = new Country($values['country'], $values['currency'], $values['locale'], $result['googleMapLanguage']);
             }
         }
 
